@@ -35,10 +35,10 @@ router.patch('/:id', async (req, res) => {
     group.chats.push(newChat._id);
     await group.save();
     // Respond with the created chat
-    res.status(201).json({newChat,group});
+    res.status(201).json({message:"chat created successfully"});
   } catch (error) {
     console.error('Error creating chat:', error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ error: 'Server error',error });
   }
 });
 

@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
     await newGroup.save();
 
     // Respond with the created group
-    res.status(201).json(newGroup);
+    res.status(201).json({newGroup});
   } catch (error) {
     console.error('Error creating group:', error);
     res.status(500).json({ message: 'Server error' });
