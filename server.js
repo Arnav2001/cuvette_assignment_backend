@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 // server.js
 const express = require('express');
 const mongoose = require('mongoose');
@@ -7,10 +7,14 @@ const createGroup = require('./routes/createGroup');
 const createChat = require('./routes/createChat');
 const getGroups = require('./routes/getGroups');
 const getGroupById = require('./routes/getGroupById');
-
-// Initialize Express app
 const app = express();
-const port = 2000;
+const cors = require('cors');
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// Initialize Express app
+
+const port = process.env.PORT || 2000;
 
 // Middleware
 app.use(bodyParser.json());

@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
     if (!name) {
       return res.status(400).json({ error: 'Name is required' });
     }
+    
     if (!color) {
       return res.status(400).json({ error: 'Colour is required' });
     }
